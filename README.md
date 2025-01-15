@@ -37,4 +37,4 @@ The goal of this application is to simplify workforce management, save time, and
 
 ## Contact
 
-If you have any questions or feedback, feel free to reach out via email at **[your-email@example.com](mailto:your-email@example.com)**.
+If you have any questions or feedback, feel free to reach out via email at **[z1ad.taha@hotmail.com](mailto:z1ad.taha@hotmail.com)**.
