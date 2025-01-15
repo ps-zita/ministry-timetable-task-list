@@ -4,101 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Worker Timetable</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        th, td {
-            border: 1px solid #ccc;
-            padding: 10px;
-            text-align: center;
-        }
-
-        th {
-            background-color: #f4f4f4;
-        }
-
-        .btn {
-            background-color: bisque;
-            padding: 5px 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 3px;
-            color: white;
-        }
-
-        .btn.green {
-            background-color: #4caf50;
-        }
-
-        .btn.red {
-            background-color: #f44336;
-        }
-
-        #popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border: 1px solid #ccc;
-            padding: 20px;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        #popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-
-        /* Popup Styles */
-        .popup-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-        }
-
-        .popup {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            border: 1px solid #ccc;
-            padding: 20px;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
@@ -119,83 +25,73 @@
             <tbody>
                 <tr>
                     <td>Harsh</td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harsh')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harsh')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harsh')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harsh')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harsh')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harsh')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harsh')">8:00</button></td>
                 </tr>
                 <tr>
                     <td>Geddy</td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                </tr>
-                <tr>
-                    <td>Harry</td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Geddy')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Geddy')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Geddy')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Geddy')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Geddy')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Geddy')">8:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Geddy')">8:00</button></td>
                 </tr>
                 <tr>
                     <td>Gurav</td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Gurav')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Gurav')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Gurav')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Gurav')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Gurav')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Gurav')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Gurav')">9:00</button></td>
                 </tr>
                 <tr>
-                    <td>Hassan</td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
+                    <td>Angelo</td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Angelo')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Angelo')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Angelo')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Angelo')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Angelo')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Angelo')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Angelo')">9:00</button></td>
                 </tr>
                 <tr>
-                    <td>MD</td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
+                    <td>Ray</td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Ray')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Ray')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Ray')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Ray')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Ray')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Ray')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Ray')">9:00</button></td>
                 </tr>
                 <tr>
-                    <td>Mahmoud</td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
+                    <td>Harry</td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harry')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harry')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harry')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harry')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harry')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harry')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Harry')">9:00</button></td>
                 </tr>
                 <tr>
-                    <td>Manish</td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
-                    <td><button class="btn red" onclick="toggleShift(this)">Off</button></td>
+                    <td>Moh</td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Moh')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Moh')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Moh')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Moh')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Moh')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Moh')">9:00</button></td>
+                    <td><button class="btn green" onclick="toggleShift(this, 'Moh')">9:00</button></td>
                 </tr>
             </tbody>
         </table>
@@ -212,206 +108,105 @@
             <button type="button" onclick="closePopup()">Cancel</button>
         </form>
     </div>
-<!-- Task List Table -->
-<div class="container">
-    <h2>Task List</h2>
-    <table id="task-table">
-        <thead>
-            <tr>
-                <th>Task</th>
-                <th>Assigned To</th>
-                <th>Status</th>
-                <th>Notes</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Fresh Water for Sponges and Chamois</td>
-                <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
-                <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
-                <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
-            </tr>
-            <tr>
-                <td> Chemicals Refill and order if almost finish</td>
-                <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
-                <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
-                <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
-            </tr>
-            <tr>
-                <td> Rags wash and dry</td>
-                <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
-                <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
-                <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
-            </tr>
-            <tr>
-                <td> Customer meet and greet (Sales)</td>
-                <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
-                <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
-                <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
-            </tr>
-            <tr>
-                <td> Yard Cleaning</td>
-                <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
-                <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
-                <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
-            </tr>
-            <tr>
-                <td> Reception Cleaning</td>
-                <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
-                <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
-                <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
-            </tr>
-            <tr>
-                <td> Quality Control</td>
-                <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
-                <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
-                <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
-            </tr>
-            <tr>
-                <td> Tool Maintainence</td>
-                <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
-                <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
-                <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
-            </tr>
-            <!-- Repeat above <tr> for each task -->
-        </tbody>
-    </table>
-</div>
-<!-- Popup Overlays and Forms -->
-<div id="assign-popup-overlay"></div>
-<div id="assign-popup" class="popup">
-    <h3>Assign To</h3>
-    <form id="assign-form">
-        <label for="assign-name">Employee:</label>
-        <select id="assign-name" required>
-            <option value="Harsh">Harsh</option>
-            <option value="Geddy">Geddy</option>
-            <option value="Gurav">Gurav</option>
-            <option value="Angelo">Angelo</option>
-            <option value="Ray">Ray</option>
-            <option value="Harry">Harry</option>
-            <option value="Moh">Moh</option>
-            <option value="N/A">Not Applicable</option>
-        </select>
-        <button type="submit">Save</button>
-        <button type="button" onclick="closeAssignPopup()">Cancel</button>
-    </form>
-</div>
 
-<div id="notes-popup-overlay"></div>
-<div id="notes-popup" class="popup">
-    <h3>Add Note</h3>
-    <form id="notes-form">
-        <label for="notes">Note:</label>
-        <textarea id="notes" rows="4" required></textarea>
-        <button type="submit">Save</button>
-        <button type="button" onclick="closeNotesPopup()">Cancel</button>
-    </form>
-</div>
+    <!-- Task List Table -->
+    <div class="container">
+        <h2>Task List</h2>
+        <table id="task-table">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Assigned To</th>
+                    <th>Status</th>
+                    <th>Notes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Fresh Water for Sponges and Chamois</td>
+                    <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
+                    <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
+                    <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
+                </tr>
+                <tr>
+                    <td>Chemicals Refill and order if almost finish</td>
+                    <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
+                    <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
+                    <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
+                </tr>
+                <tr>
+                    <td>Rags wash and dry</td>
+                    <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
+                    <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
+                    <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
+                </tr>
+                <tr>
+                    <td>Customer meet and greet (Sales)</td>
+                    <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</td>
+                    <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
+                    <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
+                </tr>
+                <tr>
+                    <td>Yard Cleaning</td>
+                    <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
+                    <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
+                    <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
+                </tr>
+                <tr>
+                    <td>Reception Cleaning</td>
+                    <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
+                    <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
+                    <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
+                </tr>
+                <tr>
+                    <td>Quality Control</td>
+                    <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
+                    <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
+                    <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
+                </tr>
+                <tr>
+                    <td>Tool Maintenance</td>
+                    <td><button class="btn red" onclick="openAssignPopup(this)">Not Assigned</button></td>
+                    <td><button class="btn red" onclick="toggleStatus(this)">Pending</button></td>
+                    <td><button class="btn" onclick="openNotesPopup(this)">Add Note</button></td>
+                </tr>
+                <!-- Repeat above <tr> for each task -->
+            </tbody>
+        </table>
+    </div>
+    <!-- Popup Overlays and Forms -->
+    <div id="assign-popup-overlay"></div>
+    <div id="assign-popup" class="popup">
+        <h3>Assign To</h3>
+        <form id="assign-form">
+            <label for="assign-name">Employee:</label>
+            <select id="assign-name" required>
+                <option value="Harsh">Harsh</option>
+                <option value="Geddy">Geddy</option>
+                <option value="Gurav">Gurav</option>
+                <option value="Angelo">Angelo</option>
+                <option value="Ray">Ray</option>
+                <option value="Harry">Harry</option>
+                <option value="Moh">Moh</option>
+                <option value="N/A">Not Applicable</option>
+            </select>
+            <button type="submit">Save</button>
+            <button type="button" onclick="closeAssignPopup()">Cancel</button>
+        </form>
+    </div>
+
+    <div id="notes-popup-overlay"></div>
+    <div id="notes-popup" class="popup">
+        <h3>Add Note</h3>
+        <form id="notes-form">
+            <label for="notes">Note:</label>
+            <textarea id="notes" rows="4" required></textarea>
+            <button type="submit">Save</button>
+            <button type="button" onclick="closeNotesPopup()">Cancel</button>
+        </form>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
-    <script>
-        function toggleShift(button) {
-            if (button.classList.contains('red')) {
-                button.classList.remove('red');
-                button.classList.add('green');
-                button.textContent = 'Set Shift';
-                openPopup(button);
-            } else {
-                button.classList.remove('green');
-                button.classList.add('red');
-                button.textContent = 'Off';
-            }
-        }
-
-        function openPopup(button) {
-            const popupOverlay = document.getElementById('popup-overlay');
-            const popup = document.getElementById('popup');
-            popupOverlay.style.display = 'block';
-            popup.style.display = 'block';
-
-            const shiftForm = document.getElementById('shift-form');
-            shiftForm.onsubmit = function (e) {
-                e.preventDefault();
-                const startTime = document.getElementById('start-time').value;
-                button.textContent = `${startTime}`;
-                closePopup();
-            };
-        }
-
-        function closePopup() {
-            document.getElementById('popup-overlay').style.display = 'none';
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('shift-form').reset();
-        }
-
-        function exportToExcel() {
-            const table = document.getElementById('timetable');
-            const workbook = XLSX.utils.table_to_book(table);
-            XLSX.writeFile(workbook, 'timetable.xlsx');
-        }
-
-        // Toggle task status
-function toggleStatus(button) {
-    if (button.classList.contains('red')) {
-        button.classList.remove('red');
-        button.classList.add('green');
-        button.textContent = 'Completed';
-    } else {
-        button.classList.remove('green');
-        button.classList.add('red');
-        button.textContent = 'Pending';
-    }
-}
-
-// Open Assign To popup
-function openAssignPopup(button) {
-    const assignPopupOverlay = document.getElementById('assign-popup-overlay');
-    const assignPopup = document.getElementById('assign-popup');
-    assignPopupOverlay.style.display = 'block';
-    assignPopup.style.display = 'block';
-
-    const assignForm = document.getElementById('assign-form');
-    assignForm.onsubmit = function (e) {
-        e.preventDefault();
-        const assignName = document.getElementById('assign-name').value;
-        button.textContent = assignName;
-        button.classList.remove('red');
-        button.classList.add('green');
-        closeAssignPopup();
-    };
-}
-
-// Close Assign To popup
-function closeAssignPopup() {
-    document.getElementById('assign-popup-overlay').style.display = 'none';
-    document.getElementById('assign-popup').style.display = 'none';
-    document.getElementById('assign-form').reset();
-}
-
-// Open Notes popup
-function openNotesPopup(button) {
-    const notesPopupOverlay = document.getElementById('notes-popup-overlay');
-    const notesPopup = document.getElementById('notes-popup');
-    notesPopupOverlay.style.display = 'block';
-    notesPopup.style.display = 'block';
-
-    const notesForm = document.getElementById('notes-form');
-    notesForm.onsubmit = function (e) {
-        e.preventDefault();
-        const notes = document.getElementById('notes').value;
-        button.textContent = notes;
-        closeNotesPopup();
-    };
-}
-
-// Close Notes popup
-function closeNotesPopup() {
-    document.getElementById('notes-popup-overlay').style.display = 'none';
-    document.getElementById('notes-popup').style.display = 'none';
-    document.getElementById('notes-form').reset();
-}
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
